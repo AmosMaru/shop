@@ -4,3 +4,8 @@
 <h1 :if={@promo}>Promo code is = <%= @promo %></h1>
 
 <p>Your selected console is: <strong><%= @console %></strong></p>
+
+<a href={~p"/?#{[console: "xbox", promo: "secrate_code"]}"} class="btn btn-primary btn-lg" role="button">Go to Home</a>
+
+
+<p>This is the full url : <%= url(~p"/products") %></p>
