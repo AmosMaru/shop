@@ -9,4 +9,6 @@ defmodule ShopWeb.ProductController do
 
     render(conn, :show, id: id)
   end
+
+
 end
