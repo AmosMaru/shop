@@ -9,3 +9,7 @@
 
 
 <p>This is the full url : <%= url(~p"/products") %></p>
+
+
+<h1>products</h1>
+<.product :for={product <- @products} name={product.name}/>
