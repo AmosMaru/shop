@@ -18,6 +18,8 @@ defmodule Shop.Products do
     %Product{}
     |> Product.changeset(attrs)
     |> Repo.insert()
+  end
+
 
   def delete_product_by_id(product = %Product{}) do
     Repo.delete(product)
