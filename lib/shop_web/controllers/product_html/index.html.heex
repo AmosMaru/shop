@@ -1,15 +1,19 @@
 <h1>Products</h1>
 <p>Welcome to the product page!</p>
 <p>Here you can find a list of all products.</p>
-<h1 :if={@promo}>Promo code is = <%= @promo %></h1>
+<h1 :if={@promo}>Promo code is = {@promo}</h1>
 
-<p>Your selected console is: <strong><%= @console %></strong></p>
+<p>Your selected console is: <strong>{@console}</strong></p>
 
-<a href={~p"/?#{[console: "xbox", promo: "secrate_code"]}"} class="btn btn-primary btn-lg" role="button">Go to Home</a>
+<a
+  href={~p"/?#{[console: "xbox", promo: "secrate_code"]}"}
+  class="btn btn-primary btn-lg"
+  role="button"
+>
+  Go to Home
+</a>
 
-
-<p>This is the full url : <%= url(~p"/products") %></p>
-
+<p>This is the full url : {url(~p"/products")}</p>
 
 <h1>products</h1>
-<.product :for={product <- @products} name={product.name}/>
+<.product :for={product <- @products} product={product} />

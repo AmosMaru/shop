@@ -28,13 +28,12 @@ defmodule ShopWeb.Router do
     get "/", PageController, :home
     get "/products", ProductController, :index
     get "/random", RandomController, :random
-    get "/products/:id", ProductController, :show
+    get "/products/:slug", ProductController, :show
 
     # resources "/products", ProductController, except: [:delete]
     # resources "/users", UserController do
     #   get "/posts", PostController, :index
     # end
-
   end
 
   # Other scopes may use custom stacks.
@@ -49,7 +48,6 @@ defmodule ShopWeb.Router do
   #   get "/", DashboardController, :home
 
   # end
-
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:shop, :dev_routes) do

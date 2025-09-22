@@ -7,5 +7,4 @@ defmodule ShopWeb.RandomHTML do
     <p>This is a random page.</p>
     """
   end
-
 end
