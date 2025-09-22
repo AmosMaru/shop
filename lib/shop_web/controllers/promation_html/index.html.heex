@@ -1,0 +1,27 @@
+<Layouts.app flash={@flash}>
+  <.header>
+    Listing Pronations
+    <:actions>
+      <.button href={~p"/pronations/new"}>
+        <.icon name="hero-plus" /> New Promation
+      </.button>
+    </:actions>
+  </.header>
+
+  <.table id="pronations" rows={@pronations} row_click={&JS.navigate(~p"/pronations/#{&1}")}>
+    <:col :let={promation} label="Name">{promation.name}</:col>
+    <:col :let={promation} label="Code">{promation.code}</:col>
+    <:col :let={promation} label="Expires at">{promation.expires_at}</:col>
+    <:action :let={promation}>
+      <div class="sr-only">
+        <.link navigate={~p"/pronations/#{promation}"}>Show</.link>
+      </div>
+      <.link navigate={~p"/pronations/#{promation}/edit"}>Edit</.link>
+    </:action>
+    <:action :let={promation}>
+      <.link href={~p"/pronations/#{promation}"} method="delete" data-confirm="Are you sure?">
+        Delete
+      </.link>
+    </:action>
+  </.table>
+</Layouts.app>

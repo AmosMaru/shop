@@ -1,0 +1,8 @@
+<Layouts.app flash={@flash}>
+  <.header>
+    New Promation
+    <:subtitle>Use this form to manage promation records in your database.</:subtitle>
+  </.header>
+
+  <.promation_form changeset={@changeset} action={~p"/pronations"} return_to={~p"/pronations"} />
+</Layouts.app>
