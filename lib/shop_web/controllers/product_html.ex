@@ -5,7 +5,7 @@ defmodule ShopWeb.ProductHTML do
   See the `product_html` directory for all templates available.
   """
   use ShopWeb, :html
-  alias Shop.Product
+  alias Shop.Products.Product
 
   embed_templates "product_html/*"
 

@@ -1,16 +1,16 @@
 defmodule ShopWeb.ProductController do
   use ShopWeb, :controller
 
-  alias Shop.{Repo, Product}
+  alias Shop.Products
   def index(conn, _params) do
-    products =Repo.all(Product)
+    products = Products.list_products()
     conn
     |> assign(:products, products)
     |> render(:index)
   end
 
   def show(conn, %{"slug" => slug}) do
-    product = Repo.get_by(Product, slug: slug)
+    product = Products.find_prodcut_by_slug(slug)
 
     IO.inspect(product)
 
